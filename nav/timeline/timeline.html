@@ -1,35 +1,140 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Línea del Tiempo Animada</title>
+    <title>Nuestra historia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="timeline.css">
 </head>
 
 <body>
-    <div class="timeline">
-        <div class="container left">
-            <div class="content">
-                <h2>Evento 1</h2>
-                <p>Descripción del evento 1.</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <h2>Evento 2</h2>
-                <p>Descripción del evento 2.</p>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <h2>Evento 3</h2>
-                <p>Descripción del evento 3.</p>
-            </div>
-        </div>
-        <!-- Agrega más eventos según sea necesario -->
+    <div class="buttons">
+        <button class="animated-button" onclick="prevContent()">PREV</button>
+        <button class="animated-button" onclick="nextContent()">NEXT</button>
     </div>
+    <section class="timeline">
+        <div class="content" id="content1">
+            <section class="contitle">
+                <section class="conthead">
+                    <h2>2019</h2>
+                    <p>Nace la pasión.</p>
+                </section>
+                <section class="contdesc">
+                    <p>Comenzamos como un pequeño negocio local ofreciendo diseño gráfico y servicios de impresión.
+                    </p>
+                    <section class="carrouselexamples">
+                        <h3>Cosecha de Éxitos</h3>
+                        <section class="imgcarrousel">
+                            <div><img src="assets/2019editorial.png" alt=""></div>
+                            <div><img src="assets/2019triptico.png" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+
+        <div class="content" id="content2">
+            <section class="contitle">
+                <section class="conthead">
+                    <h2>2020</h2>
+                    <p>Saltamos al mundo digital.</p>
+                </section>
+                <section class="contdesc">
+                    <p>Nos conectamos con la comunidad de streamers, ofreciendo banners, overlays y emojis para canales
+                        de
+                        transmisión en vivo.</p>
+                    <section class="carrouselexamples">
+                        <h3>Cosecha de Éxitos</h3>
+                        <section class="imgcarrousel">
+                            <div><img src="assets/2019editorial.png" alt=""></div>
+                            <div><img src="assets/2019triptico.png" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+
+        <div class="content" id="content3">
+            <section class="contitle">
+                <section class="conthead">
+                    <h2>2021</h2>
+                    <p>Expansión en personalización.</p>
+                </section>
+                <section class="contdesc">
+                    <p>Empezamos a añadir playeras, tazas y otros productos personalizados a nuestros servicios.</p>
+                    <section class="carrouselexamples">
+                        <h3>Cosecha de Éxitos</h3>
+                        <section class="imgcarrousel">
+                            <div><img src="assets/2019editorial.png" alt=""></div>
+                            <div><img src="assets/2019triptico.png" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+
+        <div class="content" id="content4">
+            <section class="contitle">
+                <section class="conthead">
+                    <h2>2023</h2>
+                    <p>Nuevas herramientas.</p>
+                </section>
+                <section class="contdesc">
+                    <p>Añadimos ilustración digital y comenzamos a trabajar en proyectos más complejos, como motion
+                        design y
+                        animación.</p>
+                    <section class="carrouselexamples">
+                        <h3>Cosecha de Éxitos</h3>
+                        <section class="imgcarrousel">
+                            <div><img src="assets/2019editorial.png" alt=""></div>
+                            <div><img src="assets/2019triptico.png" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+
+        <div class="content" id="content5">
+            <section class="contitle">
+                <section class="conthead">
+                    <h2>2025</h2>
+                    <p>Nos seguimos superando.</p>
+                </section>
+                <section class="contdesc">
+                    <p>Nos reinventamos manteniendo nuestro compromiso a mejorar el servicio y tu satisfacción.</p>
+                    <section class="carrouselexamples">
+                        <h3>Cosecha de Éxitos</h3>
+                        <section class="imgcarrousel">
+                            <div><img src="assets/2019editorial.png" alt=""></div>
+                            <div><img src="assets/2019triptico.png" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                            <div><img src="" alt=""></div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+
+    </section>
 </body>
 
 </html>
