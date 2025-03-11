@@ -1,0 +1,99 @@
+/*---- Ajustes Globales ---*/
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #009C9A, #00B5E5);
+    color: white;
+}
+
+h1 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+}
+p {
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14pt;
+}
+nav {
+    position: fixed;
+    inset: 0% 0% auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: min-content;
+    margin: 0 auto;
+    background-color: #003842;
+    margin-top: 1.5em;
+    padding: 10px;
+    border-radius: 12px;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 25px;
+        justify-content: space-around;
+
+        li {
+            a {
+                font-family: "Lexend", serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 10pt;
+                text-decoration: none;
+                text-align: center;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                transition: color 0.3s, transform 0.3s;
+
+                &:hover {
+                    color: #fffacd;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    #logonm {
+        height: 50px;
+        margin-right: 50px;
+    }
+
+    .iconnav {
+        width: 30px;
+        margin: 0 auto;
+        padding-bottom: 5px;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+    }
+}
+/*--- Ajustes de hoja ---*/
+#navserv {margin: 20%;}
+article img{
+    max-width: 40%;
+}
