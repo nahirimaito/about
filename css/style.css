@@ -1,45 +1,54 @@
 body {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(to right, #009C9A, #00B5E5);
-    color: white;
-}
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-size: 400%;
+  background-color: #00b5e5;
+  background-image: radial-gradient(at 47% 33%, #00cfe4 0, transparent 59%),
+    radial-gradient(at 82% 65%, #33e6d4 0, transparent 55%);
+  animation: gradientAnimation 10s ease infinite;
 
-h1 {
-    font-family: "Montserrat", serif;
+  h1 {
+    font-family: "Leckerli One", cursive;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: normal;
     font-style: normal;
     font-size: 3rem;
-}
+  }
 
-h2 {
-    font-family: "Montserrat", serif;
+  h2 {
+    font-family: "Leckerli One", cursive;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: normal;
     font-style: normal;
-    font-size: 1.5rem;
-}
+    font-size: 2rem;
+  }
 
-h3 {
-    font-family: "Montserrat", serif;
+  h3 {
+    font-family: "Leckerli One", cursive;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: normal;
     font-style: normal;
     font-size: 1rem;
-}
-
-
-p {
+  }
+  h4 {
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15pt;
+  }
+  p {
     font-family: "Lexend", serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    font-size: 14pt;
-}
+    font-size: clamp(0.875rem, 1.75vw, 1.125rem);
+  }
 
-nav {
+  nav {
     position: fixed;
     inset: 0% 0% auto;
     align-items: center;
@@ -51,154 +60,204 @@ nav {
     margin-top: 1.5em;
     padding: 10px;
     border-radius: 12px;
+    z-index: 3;
 
     ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 25px;
-        justify-content: space-around;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+      justify-content: space-around;
 
-        li {
-            a {
-                font-family: "Lexend", serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-                font-size: 10pt;
-                text-decoration: none;
-                text-align: center;
-                color: white;
-                display: flex;
-                flex-direction: column;
-                transition: color 0.3s, transform 0.3s;
+      li {
+        a {
+          font-family: "Lexend", serif;
+          font-size: 10pt;
+          text-decoration: none;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          transition: color 0.3s, transform 0.3s;
 
-                &:hover {
-                    color: #fffacd;
-                    transform: scale(1.1);
-                }
-            }
+          &:hover {
+            color: #fffacd;
+            transform: scale(1.1);
+          }
         }
+      }
     }
 
     #logonm {
-        height: 50px;
-        margin-right: 50px;
+      height: 50px;
+      margin-right: 50px;
     }
 
     .iconnav {
-        width: 30px;
-        margin: 0 auto;
-        padding-bottom: 5px;
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+      width: 30px;
+      margin: 0 auto;
+      padding-bottom: 5px;
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg)
+        brightness(100%) contrast(100%);
     }
+  }
 }
-
+.barghost {
+  height: 12vh;
+  background-color: transparent;
+}
 #bienvenida {
-    max-width: 100%;
-    padding: 13%;
-    text-align: center;
-    justify-content: center;
-}
+  padding: 3%;
+  align-self: center;
+  overflow: hidden;
 
-div button {
-    background-color: #00b5e5;
-    border: 1px solid #00b5e5;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    margin-left: 20px;
+  .bannerBienv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    z-index: 1;
+
+    .cardBannerContMedia {
+      position: relative;
+      width: 280px;
+      border-radius: 1.5rem;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transform-style: preserve-3d;
+      z-index: 2;
+
+      /* CAMBIO: ya no definimos height fija, la media define la altura */
+      overflow: visible;
+
+      &:hover {
+        transform: rotateY(5deg) scale(1.03);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Fondo glassmorfismo dinámico */
+      &::before {
+        content: "";
+        position: absolute;
+        backdrop-filter: blur(15px);
+        z-index: -1;
+      }
+
+      .cardBannerMedia {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: inherit;
+        display: block;
+        position: relative;
+        z-index: 3;
+      }
+
+      /* CAMBIO: solo las imágenes sobresalen hacia fuera del contenedor */
+      img.cardBannerMedia {
+        border-radius: 0px;
+        margin: 1px;
+        max-height: 480px;
+        transform: scale(1.2);
+        pointer-events: none;
+        z-index: 4;
+      }
+
+      @media (max-width: 768px) {
+        width: 90%;
+        padding: 2%;
+        margin: 40px;
+        img.cardBannerMedia {
+          margin: 4px;
+          border-radius: 0px;
+        }
+      }
+    }
+  }
+  #textBienvCont {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 80%;
+    width: 900px;
+
+    .animated-button {
+      font-family: "Lexend", serif;
+      font-weight: normal;
+      margin: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 12px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
+
+      &:hover {
+        transform: scale(1.08);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.4);
+      }
+
+      &:active {
+        transform: scale(0.95);
+        box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.25);
+      }
+    }
+  }
 }
 
 #servicioscard {
-    padding: 10% 20% 8% 20%;
+  justify-content: center;
+  background-color: #030c18;
+  padding: 12% 10%;
+
+  #buttonheader {
+    vertical-align: baseline;
+    max-width: 50%;
+    width: 400px;
+    max-height: 10%;
+    height: 70px;
+    display: flex;
+    gap: 7px;
     justify-content: center;
-    background-color: #030c18;
-
-}
-
-#servicioscard button {
+    align-items: center;
     border: 1px solid white;
     background-color: transparent;
     border-radius: 15px;
     padding: 10px;
-    font-family: "Montserrat", serif;
-    font-weight: 700;
     color: white;
-    font-size: 13pt;
-}
 
-.iconheader {
-    vertical-align: baseline;
-    top: 5px;
-    height: 18px;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
-}
+    h2 {
+      font-size: clamp(0.875rem, 2vw, 1.5rem);
+    }
 
-#h2servicios {
+    svg {
+      max-height: 50px;
+    }
+  }
+  #DescServDest {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    /* Mantener alineación al final */
-}
-
-#h2servicios h2,
-#h2servicios p {
-    flex: 1 1 100%;
-    /* Tamaño predeterminado: 100% del ancho disponible */
-}
-
-#h2servicios h2 {
-    flex-basis: 70%;
-    /* Ajustar a 70% del ancho en pantallas grandes */
-}
-
-#h2servicios p {
-    flex-basis: 30%;
-    /* Ajustar a 30% del ancho en pantallas grandes */
-    font-size: 1rem;
-}
-
-
-
-/* Animaciones */
-.animated-button {
-    background-color: #009C9A;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.animated-button:hover {
-    background-color: #007B73;
-    transform: scale(1.05);
-}
-
-.animated-button:active {
-    background-color: #005F56;
-    transform: scale(0.95);
-}
-
-/* Contenedor de cards */
-.card-container {
+  }
+  /* Contenedor de cards */
+  .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-}
-
-/* Cards individuales */
-.card {
+  }
+  /* Cards individuales */
+  .card {
     background-color: rgba(15, 174, 147, 0.7);
     /* Color de fondo turquesa claro con transparencia */
     color: white;
@@ -208,140 +267,148 @@ div button {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.card a {
-    text-decoration: none;
-    color: white;
-}
-
-.card:hover {
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-family: "Lexend", serif;
-}
-
-.card p {
-    font-family: "Lexend", serif;
-}
-
-/* Estilos responsivos */
-@media (max-width: 600px) {
+  }
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
     .contact-banner {
-        font-size: 14px;
+      font-size: 14px;
     }
 
     .card h3 {
-        font-size: 18px;
+      font-size: 18px;
     }
 
     .card p {
-        font-size: 14px;
+      font-size: 14px;
     }
-}
-
-#contact {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 2% 20% 2% 20%;
-    background-color: rgba(0, 56, 66, 0.9);
+  }
 }
 
 footer {
-    color: white;
+  .footer-contenedor {
+    padding: 2% 20% 2% 20%;
+    background-color: rgba(0, 56, 66, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    #contact {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 2% 20% 2% 20%;
-        background-color: rgba(0, 56, 66, 0.9);
+  .footer-links {
+    display: flex;
+    ul {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      list-style: none;
     }
-
-    #minibiofooter,
-    #rssfooter {
-        max-width: 80%;
-        padding: 10px;
+    li {
+      border: 1px #ccc solid;
+      border-radius: 5px 0px 5px 0px;
+      margin: 3px;
+      padding: 3px;
     }
-
-    #minibiofooter {
-        p {
-            font-size: 12pt;
-        }
+    a {
+      font-family: "Lexend", serif;
+      font-weight: 700;
+      text-decoration: none;
+      color: #ccc;
     }
-
-    #rssfooter {
-        text-align: center;
-
-        h2 {
-            font-family: "Montserrat", serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            font-size: 1.5rem;
-        }
+    a:hover {
+      text-decoration: underline;
     }
+  }
 
+  .footer-branding {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    .logo-footer {
+      max-width: 200px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    section {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .iconrsscont {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: space-evenly;
-
-        a {
-            padding: 10px;
-            font-family: "Montserrat", serif;
-            font-weight: 700;
-            text-decoration: none;
-            color: white;
-            font-size: 10pt;
-
-        }
-    }
-
-    #urlfooter {
-        a {
-            padding: 10px;
-            font-family: "Montserrat", serif;
-            font-weight: 700;
-            text-decoration: none;
-            color: white;
-            font-size: 10pt;
-        }
-    }
-
-    .iconrss {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: space-evenly;
+      margin-bottom: 1.5rem;
+      a {
+        font-family: "Lexend", serif;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        color: #ccc;
+        font-size: clamp(0.9rem, 1.2vw, 1rem);
+      }
+      .iconrss {
         width: 35px;
         height: 35px;
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg)
+          brightness(100%) contrast(100%);
 
         a {
-            text-align: center;
-            box-sizing: border-box;
-            max-width: 100px;
+          text-align: center;
+          box-sizing: border-box;
+          max-width: 100px;
         }
+      }
     }
 
     iframe {
-        margin: 5px;
-        height: auto;
-        width: 100%;
+      margin: 5px;
+      height: auto;
+      width: 100%;
     }
+  }
 
-    #tyc {
-        display: flex;
-        justify-content: space-around;
-        padding: 2% 20% 2% 20%;
+  #footer-creditos {
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: #aaa;
 
-        a {
-            font-family: "Montserrat", serif;
-            font-weight: 700;
-            text-decoration: none;
-            color: white
-        }
+    p {
+      font-family: "Lexend", serif;
+      font-weight: 700;
+      text-decoration: none;
+      color: white;
     }
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
