@@ -14,11 +14,13 @@
   </head>
 
   <body>
-    <nav id="navbar">
-      <img id="logonm" src="logonm.svg" alt="Nahiri Maito" />
+    <nav>
+      <div id="logonm">
+        <img src="../logonm.svg" alt="Nahiri Maito" />
+      </div>
       <ul>
         <li>
-          <a href="index.html">
+          <a href="/index.html">
             <img
               class="iconnav"
               src="https://img.icons8.com/?size=100&id=Ql0l8S0vDvXy&format=png&color=000000"
@@ -42,7 +44,7 @@
           >
         </li>
         <li>
-          <a href="#sobre-nosotros">
+          <a href="nav/nosotros.html">
             <img
               class="iconnav"
               src="https://img.icons8.com/?size=100&id=GesQWESeiSrx&format=png&color=000000"
@@ -59,8 +61,9 @@
         <div class="cardBannerContMedia">
           <img
             class="cardBannerMedia"
-            src="/assets/home/PrePapImp.png"
+            src="../assets/home/PrePapImp.png"
             alt="Mercancía"
+            loading="lazy"
           />
           <div class="cardBienvBack"></div>
         </div>
@@ -76,8 +79,9 @@
             preload="metadata"
             controlsList="nodownload"
             class="cardBannerMedia"
-            src="/assets/home/PrePodVid.mp4"
+            src="../assets/home/PrePodVid.mp4"
             type="video/mp4"
+            loading="lazy"
           >
             Tu navegador no soporta HTML5
           </video>
@@ -87,8 +91,9 @@
         <div class="cardBannerContMedia">
           <img
             class="cardBannerMedia"
-            src="/assets/home/PreMerch.png"
+            src="../assets/home/PreMerch.png"
             alt="Papelería"
+            loading="lazy"
           />
           <div class="cardBienvBack"></div>
         </div>
@@ -111,7 +116,7 @@
 
     <!-- Cards de navegación -->
     <section id="servicioscard">
-      <button id="buttonheader">
+      <button class="buttonheader">
         <svg
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
@@ -143,17 +148,19 @@
 
       <div class="card-container">
         <div class="card">
-          <a href="#nosotros">
+          <a href=" https://wa.me/c/5215614847163">
             <h3>🎁 Mercancía personalizada</h3>
             <h4>Regala o vende cosas únicas.</h4>
             <p>
               Creamos tazas, libretas, ropa, stickers, credenciales y más. Para
               eventos, regalos, fandoms o tu propia tienda en línea.
+              <br /><br />
+              <strong>🔎 Ver catálogo completo en WhatsApp</strong>
             </p>
           </a>
         </div>
         <div class="card">
-          <a href="nav/timeline.html">
+          <a href="nav/papeleria-empresarial.html">
             <h3>🖋️ Papelería empresarial</h3>
             <h4>Identidad visual que representa tu negocio.</h4>
             <p>
@@ -277,7 +284,7 @@
       </div>
       <!-- 🧷 Bloque 3: Créditos -->
       <small id="footer-creditos">
-        <p>© 2025 Penta Pinguin. Hecho con cariño, café y pingüinos 💻🐧</p>
+        © 2025 Penta Pinguin. Hecho con cariño, café y pingüinos 💻🐧
       </small>
     </footer>
   </body>
