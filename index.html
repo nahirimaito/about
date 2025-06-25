@@ -56,21 +56,30 @@
 
     <section class="barghost"></section>
 
-    <section id="bienvenida">
-      <div class="bannerBienv">
-        <div class="cardBannerContMedia">
-          <img
-            class="cardBannerMedia"
-            src="../assets/home/PrePapImp.png"
-            alt="Mercancía"
-            loading="lazy"
-          />
-          <div class="cardBienvBack"></div>
+    <section id="hero-bienvenida">
+      <div class="hero-tarjetas">
+        <div class="tarjeta-servicio tarjeta-imagen">
+          <div class="tarjeta-servicio__media-wrapper">
+            <img
+              class="tarjeta-servicio__media"
+              src="../assets/home/PrePapImp.png"
+              alt="Diseño y Papelería Impresa"
+              loading="lazy"
+            />
+          </div>
+          <div class="tarjeta-servicio__superposicion">
+            <h3>Tu Marca, Impresa con Estilo</h3>
+            <p>Desde tarjetas que enamoran hasta papelería que deja huella.</p>
+            <a href="#papeleria-diseno" class="btn-primario"
+              >Ver Papelería y Diseño</a
+            >
+          </div>
+          <div class="tarjeta-servicio__efecto-fondo"></div>
         </div>
 
-        <div class="cardBannerContMedia">
+        <div class="tarjeta-servicio tarjeta-video">
           <video
-            id="bannerVideo"
+            id="videoBanner"
             autoplay
             loop
             playsinline
@@ -78,28 +87,47 @@
             controls
             preload="metadata"
             controlsList="nodownload"
-            class="cardBannerMedia"
+            class="tarjeta-servicio__media"
             src="../assets/home/PrePodVid.mp4"
             type="video/mp4"
             loading="lazy"
           >
             Tu navegador no soporta HTML5
           </video>
-          <div class="cardBienvBack"></div>
+          <div class="tarjeta-servicio__superposicion">
+            <h3>Historias que Brillan y Sonidos que Conquistan</h3>
+            <p>Transforma tus ideas en videos y podcasts cautivadores.</p>
+            <a href="#edicion-audiovisual" class="btn-primario"
+              >Descubre Edición</a
+            >
+          </div>
+          <div class="tarjeta-servicio__efecto-fondo"></div>
         </div>
 
-        <div class="cardBannerContMedia">
-          <img
-            class="cardBannerMedia"
-            src="../assets/home/PreMerch.png"
-            alt="Papelería"
-            loading="lazy"
-          />
-          <div class="cardBienvBack"></div>
+        <div class="tarjeta-servicio tarjeta-imagen">
+          <div class="tarjeta-servicio__media-wrapper">
+            <img
+              class="tarjeta-servicio__media"
+              src="../assets/home/PreMerch.png"
+              alt="Mercancía Personalizada"
+              loading="lazy"
+            />
+          </div>
+          <div class="tarjeta-servicio__superposicion">
+            <h3>Diseña tu Mundo, Vístelo, Úsalo</h3>
+            <p>
+              Crea piezas únicas: desde totes y playeras hasta stickers con tu
+              propio estilo.
+            </p>
+            <a href="#merch-personalizada" class="btn-primario"
+              >Personaliza tu Merch</a
+            >
+          </div>
+          <div class="tarjeta-servicio__efecto-fondo"></div>
         </div>
       </div>
 
-      <div id="textBienvCont">
+      <div class="hero-texto">
         <h1>¿Qué quieres crear hoy?</h1>
         <p>
           En Nahiri Maito damos vida a tus ideas: ya sea que quieras

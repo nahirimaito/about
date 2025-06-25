@@ -303,13 +303,12 @@ body {
   }
 }
 /* === HOME === */
-#bienvenida {
-  padding: 3%;
+#hero-bienvenida {
   align-self: center;
-  overflow: hidden;
 
-  .bannerBienv {
-    padding: 2% 5% 0 5%;
+  .hero-tarjetas {
+    /* Contenedor de las 3 cards de bienvenida*/
+    padding: 2% 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -318,7 +317,8 @@ body {
     gap: 2.5rem;
     z-index: 1;
 
-    .cardBannerContMedia {
+    .tarjeta-servicio {
+      /* Card de bienvenida  */
       flex: 1 1 calc(30% - 2rem);
       position: relative;
       width: 100%;
@@ -331,63 +331,141 @@ body {
       transform-style: preserve-3d;
       z-index: 2;
 
-      /* CAMBIO: ya no definimos height fija, la media define la altura */
-      overflow: visible;
+      overflow: hidden; /* ¡IMPORTANTE! Mantenerlo aquí para que el overlay no se desborde */
 
-      &:hover {
-        transform: rotateY(5deg) scale(1.03);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      &:hover /* Efecto al hover de la card de bienvenida */ {
+        transform: scale(1.03);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+
+        &.tarjeta-imagen
+          .tarjeta-servicio__media-wrapper
+          .tarjeta-servicio__media {
+          transform: scale(0.9);
+        }
+        .tarjeta-servicio__superposicion {
+          opacity: 1; /* Se hace visible al hover */
+          transform: translateY(0); /* Vuelve a su posición original */
+          z-index: 3; /* Asegura que el overlay esté encima de todo en la tarjeta */
+        }
+        .tarjeta-servicio__efecto-fondo {
+          z-index: 2;
+          backdrop-filter: blur(5px); /* El efecto glassmorphism */
+          background-color: rgba(3, 12, 24, 0.7);
+        }
       }
 
-      /* Fondo glassmorfismo dinámico */
-      &::before {
-        content: "";
-        position: absolute;
-        backdrop-filter: blur(15px);
-        z-index: -1;
+      /* Contenedor ESPECÍFICO para las imágenes que sobresalen */
+      &.tarjeta-imagen {
+        overflow: visible; /* ¡Aquí permitimos que la imagen sobresalga de este contenedor! */
+        .tarjeta-servicio__media-wrapper  /* NUEVO: Envoltorio para la media que sobresale */ {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          .tarjeta-servicio__media {
+            border-radius: 0px;
+            max-height: 350px;
+            aspect-ratio: 9/12;
+            object-fit: contain;
+            transform: scale(1.2);
+            pointer-events: none;
+            z-index: 1;
+            transition: transform 0.4s ease;
+          }
+        }
       }
 
-      .cardBannerMedia {
+      /* Estilos generales para la media (video o imagen que NO sobresale) */
+      .tarjeta-servicio__media /* Esto afectará al VIDEO directamente */ {
         width: 100%;
-        max-height: 400px; /* Ajusta este valor según sea necesario */
+        aspect-ratio: 9/16;
+        max-height: 720px;
         object-fit: cover;
-        border-radius: inherit;
         display: block;
         position: relative;
-        z-index: 3;
+        z-index: 1;
+        transition: transform 0.4s ease;
       }
 
-      /* CAMBIO: solo las imágenes sobresalen hacia fuera del contenedor */
-      img.cardBannerMedia {
-        border-radius: 0px;
-        margin: 1px;
-        max-height: 400px;
-        transform: scale(1.2);
-        pointer-events: none;
-        z-index: 4;
+      .tarjeta-servicio__superposicion /* Antes .contenido-superpuesto */ {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 88%;
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+        opacity: 0; /* Oculto por defecto */
+        transform: translateY(20px); /* Pequeño desplazamiento para animación */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave */
+        z-index: 2;
+        h3 {
+          font-size: 1.5em;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 0.9em;
+          margin-bottom: 20px;
+        }
+        .btn-primario {
+          background-color: #003842; /* Tu color de branding */
+          color: white;
+          padding: 8px 15px;
+          border-radius: 5px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.2s ease;
+          &:hover {
+            background-color: #10af94;
+          }
+        }
+      }
+      .tarjeta-servicio__efecto-fondo /* Fondo de la card de bienvenida */ {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 9/12;
+        z-index: 1; /* Asegura que esté detrás de la imagen/video */
+        border-radius: inherit;
       }
 
+      /* Media queries para las cards */
       @media (max-width: 768px) {
         width: 90%;
-        padding: 2%;
-        margin: 40px;
-        img.cardBannerMedia {
+        padding: 2%; /* Revisa si este padding es necesario o si afecta el diseño */
+        margin: 40px auto; /* Centra las cards en móviles */
+
+        /* Ajustes para la imagen dentro de la tarjeta en móviles */
+        &.tarjeta-imagen
+          .tarjeta-servicio__media-wrapper
+          .tarjeta-servicio__media {
           margin: 4px;
-          border-radius: 0px;
+          border-radius: 0px; /* Asegura que no tenga borde de radio si sobresale */
         }
       }
     }
+
     @media (max-width: 750px) {
-      .cardBannerContMedia {
-        flex: 1 1 calc(80% - 2rem); /* 3 columnas menos el gap */
+      /* Este media query aplica al contenedor de tarjetas */
+      .tarjeta-servicio {
+        flex: 1 1 calc(80% - 2rem); /* Ocupa más espacio en pantallas pequeñas */
       }
     }
   }
-  #textBienvCont {
+
+  .hero-texto {
+    /* Antes #textBienvCont */
     margin: 0 auto;
     text-align: center;
-    max-width: 80%;
-    width: 900px;
+    max-width: 800px;
+    padding: 0% 5% 5%;
   }
 }
 
