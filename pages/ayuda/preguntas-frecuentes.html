@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,24 +24,19 @@
           });
       };
 
-      loadComponent("nav-container", "/components/nav.html");
-      loadComponent(
-        "working-notice-container",
-        "/components/working-note.html"
-      );
-      loadComponent("footer-container", "/components/footer.html");
+      loadComponent("nav-container", "components/nav.html");
+      loadComponent("working-notice-container", "components/working-note.html");
+      loadComponent("footer-container", "components/footer.html");
     });
   </script>
   <body>
-    <body>
-      <div id="nav-container"></div>
+    <div id="nav-container"></div>
 
-      <main>
-        <!-- Aquí va el contenido de la página -->
-      </main>
+    <main>
+      <!-- Aquí va el contenido de la página -->
+    </main>
 
-      <div id="working-notice-container"></div>
-      <div id="footer-container"></div>
-    </body>
+    <div id="working-notice-container"></div>
+    <div id="footer-container"></div>
   </body>
 </html>
