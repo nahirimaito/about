@@ -1,0 +1,33 @@
+.doc-item {
+  background-color: #f5f5f5;
+  color: black;
+  padding: 2% 10%;
+  max-width: 1020px;
+  margin: 0 auto;
+  blockquote {
+    background: #f0f4f7;
+    border-left: 4px solid #004552;
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    font-style: italic;
+    color: #333;
+  }
+  .faq-conditions {
+    list-style-type: decimal;
+  }
+  .privacy-list,
+  .faq-conditions,
+  .conditions-list {
+    li a,
+    p a {
+      font-style: italic;
+      font-weight: 500;
+      color: DarkSlateGray;
+      text-decoration: inherit;
+    }
+    ul {
+      font-family: "Lexend", serif;
+      font-weight: 240;
+    }
+  }
+}
