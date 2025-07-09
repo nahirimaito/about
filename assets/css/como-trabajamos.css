@@ -113,43 +113,6 @@ main {
     text-decoration: inherit;
   }
 
-  .recomendaciones-tamano {
-    font-family: "Lexend", serif;
-    font-optical-sizing: auto;
-    max-width: 100%;
-
-    .table-container {
-      overflow-x: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(6px);
-      margin-bottom: 1rem;
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: calc(300px - 1rem);
-        font-size: 0.95rem;
-
-        thead {
-          background-color: #004552;
-          color: white;
-
-          th {
-            font-weight: 600;
-          }
-        }
-
-        th,
-        td {
-          text-align: left;
-          padding: 12px;
-          border-bottom: 1px solid #ddd;
-        }
-      }
-    }
-  }
   .nota-info {
     font-size: 0.9rem;
     color: #444;
