@@ -1,0 +1,15 @@
+# Ignora carpetas ocultas de configuración
+.vscode/
+.continue/
+.DS_Store
+Thumbs.db
+
+# Ignora backups y archivos temporales
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Ignora node_modules o dependencias si usas paquetes
+node_modules/
+
